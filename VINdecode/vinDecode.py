@@ -1,9 +1,10 @@
-import requests
 import json
 
-link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCESS_CODE&reportType=YOUR_REPORT_TYPE&vin=YOUR_VIN"
+import requests
+
+link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCESS_CODE&reportTypeYOUR_REPORT_TYPE3&vin=WBXPA93414WA60473"
 # YOUR_ACCESS_CODE: Your access code.
-# OUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite
+# YOUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite
 # YOUR_VIN: The vin you wish to decode.
 response = requests.get(link)
 output = response.content.decode('utf-8')
