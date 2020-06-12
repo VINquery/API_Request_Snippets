@@ -2,9 +2,8 @@ import os
 import xml.etree.ElementTree as ET
 import requests
 
-link = "http://www.recognition.ws/vinocr/v1?accesscode=7fdc7ba0-6a5c-4122-a74c-31f5de9ef87c"
-# YOUR_ACCESS_CODE: Your access code.
-path = "C:/Users/sooph/Downloads/2751-0ab4bd62-d696-4fb5-83d8-3eee708732fc.jpg"
+link = "http://www.recognition.ws/vinocr/v1?accesscode=YOUR_ACCESS_CODE"
+path = "YOUR_FILE_DIRECTORY"
 
 
 image = open(path, 'rb')
