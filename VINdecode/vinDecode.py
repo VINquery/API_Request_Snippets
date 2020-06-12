@@ -2,7 +2,7 @@ import json
 
 import requests
 
-link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCESS_CODE&reportTypeYOUR_REPORT_TYPE3&vin=WBXPA93414WA60473"
+link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCESS_CODE&reportTypeYOUR_REPORT_TYPE3&vin=YOUR_VIN"
 # YOUR_ACCESS_CODE: Your access code.
 # YOUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite
 # YOUR_VIN: The vin you wish to decode.
