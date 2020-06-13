@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.Base64;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -67,38 +66,38 @@ public class vinOCR {
         }
     }
 
-    public static void postImageEncode(HttpURLConnection con, String filePath) {
-        String charSet = "UTF-8";
-        File binaryFile = new File(filePath);
-        String boundary = "--";
-        String CRLF = "\r\n";
-        try {
-            con.setDoInput(true);
-            con.setDoOutput(true);
-            con.setRequestMethod("POST");
-            con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
+    // public static void postImageEncode(HttpURLConnection con, String filePath) {
+    //     String charSet = "UTF-8";
+    //     File binaryFile = new File(filePath);
+    //     String boundary = "--";
+    //     String CRLF = "\r\n";
+    //     try {
+    //         con.setDoInput(true);
+    //         con.setDoOutput(true);
+    //         con.setRequestMethod("POST");
+    //         con.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + boundary);
 
-            OutputStream output = con.getOutputStream();
-            PrintWriter pw = new PrintWriter(new OutputStreamWriter(output, charSet));
-            pw.append("--" + boundary).append(CRLF);
-            String name = binaryFile.getName().replaceFirst("[.][^.]+$", "");
-            pw.append("Content-Disposition: form-data; name \"file\"; filename=\"" + name + "\"")
-                    .append(CRLF);
-            pw.append("Content-Type: text/plain").append(CRLF);
-            pw.append(CRLF).flush();
+    //         OutputStream output = con.getOutputStream();
+    //         PrintWriter pw = new PrintWriter(new OutputStreamWriter(output, charSet));
+    //         pw.append("--" + boundary).append(CRLF);
+    //         String name = binaryFile.getName().replaceFirst("[.][^.]+$", "");
+    //         pw.append("Content-Disposition: form-data; name \"file\"; filename=\"" + name + "\"")
+    //                 .append(CRLF);
+    //         pw.append("Content-Type: text/plain").append(CRLF);
+    //         pw.append(CRLF).flush();
 
-            String encoded = Base64.getEncoder().encodeToString(Files.readAllBytes(binaryFile.toPath()));
-            pw.append(encoded).flush();
+    //         String encoded = Base64.getEncoder().encodeToString(Files.readAllBytes(binaryFile.toPath()));
+    //         pw.append(encoded).flush();
 
-            pw.append(CRLF).append("--" + boundary + "--").flush();
+    //         pw.append(CRLF).append("--" + boundary + "--").flush();
 
-            pw.close();
-            output.close();
+    //         pw.close();
+    //         output.close();
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+    //     } catch (Exception e) {
+    //         e.printStackTrace();
+    //     }
+    // }
 
     public static void parseXML(HttpURLConnection con) {
         try {
