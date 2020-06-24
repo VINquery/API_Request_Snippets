@@ -15,7 +15,7 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
-public class VINbarcode {
+public class vinBarcode {
     public static void main(String[] args) {
         // Insert file path of the image of the vin as well as your access code in
         // "FILE_PATH" and "YOUR_ACCESS_CODE" respectively.
