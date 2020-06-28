@@ -17,16 +17,13 @@ namespace VINdecode
             String url = "http://ws.vinquery.com/restxml.aspx?accesscode=YOUR_ACCESS_CODE&reportType=YOUR_REPORT_TYPE&vin=YOUR_VIN";
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
 
             using (Stream dataStream = response.GetResponseStream())
             {
                 StreamReader stream = new StreamReader(dataStream);
                 String responseString = stream.ReadToEnd();
-                Console.WriteLine(responseString);
 
                 XElement root = XElement.Parse(responseString);
-                Console.WriteLine(root);
 
                 IEnumerable<XElement> tests =
                     from el in root.Elements("VIN").Elements("Vehicle").Elements("Item")
