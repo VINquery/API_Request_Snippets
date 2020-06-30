@@ -21,7 +21,7 @@ public class vinDecode {
 			// YOUR_VIN: The vin you wish to decode.
 			final HttpURLConnection con = (HttpURLConnection) link.openConnection();
 			con.setRequestMethod("GET");
-			
+
 			parseXML(con);
 			con.disconnect();
 
@@ -35,14 +35,7 @@ public class vinDecode {
 			// XML stream is parsed, assuming LITE data type request.
 			XMLInputFactory factory = XMLInputFactory.newInstance();
 			XMLEventReader eventReader = factory.createXMLEventReader(new InputStreamReader(con.getInputStream()));
-			// Essentially, it searches for Item elements in the XML file and retrieves
-			// their key and value attributes.
-			// The program then searches for model year, make, and model, then outputting
-			// this information.
-			// This can be modified to output other information such as the country it is
-			// manufactured in and other
-			// information provided in the XML file.
-
+			// Parsing response for model year, make, and model.
 			while (eventReader.hasNext()) {
 				String temp, print = "";
 				try {
