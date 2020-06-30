@@ -2,6 +2,11 @@ import json
 
 import requests
 
+# This solution is long-winded and not as concise vinDecode2.py.
+# This approach parses the response as a string whereas the second
+# converts the response into an ElementTree and uses built-in libraries
+# to parse the information contained.
+
 link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCESS_CODE&reportTypeYOUR_REPORT_TYPE3&vin=YOUR_VIN"
 # YOUR_ACCESS_CODE: Your access code.
 # YOUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite

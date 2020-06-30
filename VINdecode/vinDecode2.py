@@ -2,6 +2,10 @@ import xml.etree.ElementTree as ET
 
 import requests
 
+# If you are interested, vinDecode.py parses the response as a string, as opposed to
+# conerting the response to an ElementTree.
+# This solution is far more concise.
+
 link = "http://ws.vinquery.com/restxml.aspx?accesscode=ACCCESS_CODE&reportType=YOUR_REPORT_TYPE&vin=YOUR_VIN"
 # YOUR_ACCESS_CODE: Your access code.
 # YOUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite
