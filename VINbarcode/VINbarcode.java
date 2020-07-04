@@ -22,7 +22,7 @@ public class vinBarcode {
         // The webpage may appear to be blank. In this case, you may need to inspect the
         // page's source code to view information.
         final String filePath = "FILE_PATH";
-        final String urlString = "http://www.recognition.ws/vinocr/v1?accesscode=ACCESS_CODE";
+        final String urlString = "http://www.recognition.ws/vinbarcode/v1?accesscode=ACCESS_CODE";
         try {
             final URL link = new URL(urlString);
             final HttpURLConnection con = (HttpURLConnection) link.openConnection();
@@ -53,7 +53,7 @@ public class vinBarcode {
                     .append(CRLF);
             pw.append("Content-Type: image/gif").append(CRLF);
             pw.append(CRLF).flush();
-
+            
             Files.copy(binaryFile.toPath(), output);
             output.flush();
 

@@ -19,12 +19,17 @@ namespace VINocr
             String responsestring = client.Encoding.GetString(response);
             XElement root = XElement.Parse(responsestring);
 
-            IEnumerable<XElement> test =
-                from el in root.Elements("VIN_Captured")
-                where (string)el.Value != null
-                select el;
-            foreach (XElement el in test)
-                Console.WriteLine("VIN captured: " + (string)el.Value);
+            // Iterating for "VIN_Captured" item in the root tag.
+
+            var el = root.Elements("VIN_Captured");
+            Console.WriteLine("VIN Captured: " + (string) el.Value);
+
+            // IEnumerable<XElement> test =
+            //     from el in root.Elements("VIN_Captured")
+            //     where (string) el.Value != null
+            //     select el;
+            // foreach (XElement el in test)
+            //     Console.WriteLine("VIN captured: " + (string)el.Value);
         }
     }
 }

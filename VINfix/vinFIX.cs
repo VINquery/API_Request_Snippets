@@ -15,20 +15,23 @@ namespace VINfix
         static void Main(string[] args)
         {
             String url = "http://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODE&vin=YOUR_VIN";
+            // YOUR_ACCESS_CODE: Your access code
+            // YOUR_VIN: Your VIN to fix
+            // For comments on the get method, refer to vinDecode.cs.
             WebRequest request = WebRequest.Create(url);
             WebResponse response = request.GetResponse();
-            Console.WriteLine(((HttpWebResponse)response).StatusDescription);
-
+            
             using (Stream dataStream = response.GetResponseStream())
             {
                 StreamReader stream = new StreamReader(dataStream);
                 String responseString = stream.ReadToEnd();
-                Console.WriteLine(responseString);
 
                 XElement root = XElement.Parse(responseString);
-                Console.WriteLine(root);
 
                 Console.WriteLine("Algorithm 1:");
+
+                // Iterating through el elements which are within the root tag, Algorithm1 tag, and Item tag.
+                // Outputting their Key and Value attributes.
                 IEnumerable<XElement> algorithmOne =
                     from el in root.Elements("Algorithm1").Elements("Item")
                     where (string) el.Attribute("Key") != null
@@ -37,6 +40,7 @@ namespace VINfix
                     Console.WriteLine((string) el.Attribute("Key") + ": " + (string) el.Attribute("Value"));
 
                 Console.WriteLine("Algorithm 2:");
+                // Same procedure as with algorithm one, but Algorithm1 -> Algorithm2 tag.
                 IEnumerable<XElement> algorithmTwo =
                     from ex in root.Elements("Algorithm2").Elements("Item")
                     where (string) ex.Attribute("Key") != null
