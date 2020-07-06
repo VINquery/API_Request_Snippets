@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 import requests
 
-url = "https://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODEvin=YOUR_VIN"
+url = "https://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODE_vin=YOUR_VIN"
 # YOUR_ACCESS_CODE: Your access code.
 # YOUR_VIN: The incorrect vin needed for fixing.
 
