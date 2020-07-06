@@ -11,17 +11,17 @@ link = "http://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODEvin=YOUR_
 response = requests.get(link)
 xml = ET.fromstring(response.content.decode('UTF-8'))
 
-# suggestion is split into sug1 (Algorithm 1) and sug2 (Algorithm 2).
+# suggestion is split into alg1 (Algorithm 1) and alg2 (Algorithm 2).
 suggestion = list(xml)
-sug1 = xml[0]
-sug1 = list(sug1)
+alg1 = xml[0]
+alg1 = list(alg1)
 print("Algorithm 1:")
-# Iterate over each item within sug1
-for i in sug1:
+# Iterate over each item within alg1
+for i in alg1:
     print(i.attrib['Key'] + ": " + i.attrib['Value'])
-sug2 = xml[1]
-sug2 = list(sug2)
+alg2 = xml[1]
+alg2 = list(alg2)
 print("Algorithm 2:")
-# Iterate over each item within sug2
-for i in sug2:
+# Iterate over each item within alg2
+for i in alg2:
     print(i.attrib['Key'] + ": " + i.attrib['Value'])
