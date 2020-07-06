@@ -10,7 +10,7 @@ function httpPostSync() {
     xhttp.send(formData);
     
     xmlDoc = parser.parseFromString(xhttp.responseText, "text/xml");
-    var text = "VIN Captured: " + xmlDoc.getElementsByTagName("License_Number")[0].childNodes[0].nodeValue;
+    var text = "License Number: " + xmlDoc.getElementsByTagName("License_Number")[0].childNodes[0].nodeValue;
     // alert("Response: " + xhttp.responseText);
 }
 
@@ -28,7 +28,7 @@ function httpPostAsync() {
         if (this.readyState == 4 && this.status == 200) {
             var parser = new DOMParser();
             xmlDoc = parser.parseFromString(xhttp.responseText, "text/xml");
-            var text = "VIN Captured: " + xmlDoc.getElementsByTagName("License_Number")[0].childNodes[0].nodeValue;
+            var text = "License Number: " + xmlDoc.getElementsByTagName("License_Number")[0].childNodes[0].nodeValue;
             // alert("Response: " + xhttp.responseText);
         }
     }
