@@ -13,12 +13,12 @@ import javax.xml.stream.events.XMLEvent;
 public class vinFIX {
     public static void main(String[] args) {
         try {
-            final URL link = new URL("http://www.recognition.ws/vinfix/v1?accesscode=YourAccessCode&vin=YourVINToFix");
+            final URL url = new URL("https://www.recognition.ws/vinfix/v1?accesscode=YourAccessCode&vin=YourVINToFix");
             // Replace YourAccessCode with the access code assigned.
             // Replace YourVINToFix with the incorrect VIN.
             // The webpage may appear to be blank. In this case, you may need to inspect the
             // page's source code to view the raw XML file.
-            final HttpURLConnection con = (HttpURLConnection) link.openConnection();
+            final HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             parseXML(con);
             con.disconnect();

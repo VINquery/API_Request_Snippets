@@ -14,7 +14,7 @@ namespace VINfix
     {
         static void Main(string[] args)
         {
-            String url = "http://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODE&vin=YOUR_VIN";
+            String url = "https://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODE&vin=YOUR_VIN";
             // YOUR_ACCESS_CODE: Your access code
             // YOUR_VIN: Your VIN to fix
             // For comments on the get method, refer to vinDecode.cs.

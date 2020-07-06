@@ -1,14 +1,11 @@
 import xml.etree.ElementTree as ET
-
-import json
-
 import requests
 
-link = "http://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODEvin=YOUR_VIN"
+url = "https://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODEvin=YOUR_VIN"
 # YOUR_ACCESS_CODE: Your access code.
 # YOUR_VIN: The incorrect vin needed for fixing.
 
-response = requests.get(link)
+response = requests.get(url)
 xml = ET.fromstring(response.content.decode('UTF-8'))
 
 # suggestion is split into alg1 (Algorithm 1) and alg2 (Algorithm 2).

@@ -1,4 +1,4 @@
-const url = "http://www.recognition.ws/vinfix/v1?accesscode=ACCESS_CODE&vin=YOUR_VIN";
+const url = "https://www.recognition.ws/vinfix/v1?accesscode=ACCESS_CODE&vin=YOUR_VIN";
 
 // Synchronous Get HTTP Request
 function httpGetSync() {
@@ -11,7 +11,7 @@ function httpGetSync() {
     var algorithm1 = xmlDoc.getElementsByTagName("Algorithm1")[0].getElementsByTagName("Item");
     var algorithm2 = xmlDoc.getElementsByTagName("Algorithm2")[0].getElementsByTagName("Item");
 
-    // As algorithm one and two can have varying amounts suggestions, this accomodates for any scenario.
+    // As algorithm one and two can have varying amounts of suggestions, this accomodates for any scenario.
     
     text = "Algorithm 1:";
     for (var i = 0; i < algorithm1; i++) {
@@ -42,8 +42,6 @@ function httpGetSync() {
       var text;
       var algorithm1 = xmlDoc.getElementsByTagName("Item")[0].getElementsByTagName("Algorithm1");
       var algorithm2 = xmlDoc.getElementsByTagName("Item")[0].getElementsByTagName("Algorithm2");
-
-      // As algorithm one and two can have varying amounts suggestions, this accomodates for any scenario.
     
       text = "Algorithm 1:";
       for (var i = 0; i < algorithm1; i++) {
