@@ -8,8 +8,8 @@ function httpGetSync() {
     parser = new DOMParser();
     xmlDoc = parser.parseFromString(xhttp.responseText,"text/xml");
     var text;
-    var algorithm1 = xmlDoc.getElementsByTagName("Item")[0].getElementsByTagName("Algorithm1");
-    var algorithm2 = xmlDoc.getElementsByTagName("Item")[0].getElementsByTagName("Algorithm2");
+    var algorithm1 = xmlDoc.getElementsByTagName("Algorithm1")[0].getElementsByTagName("Item");
+    var algorithm2 = xmlDoc.getElementsByTagName("Algorithm2")[0].getElementsByTagName("Item");
 
     // As algorithm one and two can have varying amounts suggestions, this accomodates for any scenario.
     
@@ -30,7 +30,7 @@ function httpGetSync() {
 
   }
   
-  // Asynchronous Get HTTP Response
+  // Asynchronous Get HTTP Responsex
   function httpGetAsync() {
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, false);
