@@ -3,7 +3,7 @@
 $response = file_get_contents('https://www.recognition.ws/vinfix/v1?accesscode=YOUR_ACCESS_CODE&vin=YOUR_VIN');
 // YOUR_ACCESS_CODE: Your access code.
 // YOUR_REPORT_TYPE: 0 - Basic, 1 - Standard, 2 - Extended, 3 - Lite
-// YOUR_VIN: The vin you wish to decode.
+// YOUR_VIN: The vin you wish to fix.
 
 // Parsing the response into a SimpleXMLElement
 $response = new SimpleXMLElement($response);
