@@ -15,6 +15,8 @@ public class vinFIX {
     public static void main(String[] args) {
         try {
             final URL url = new URL("https://www.recognition.ws/vinfix/v1?accesscode=YourAccessCode&vin=YourVINToFix");
+            // YOUR_ACCESS_CODE: Your access code
+            // YOUR_VIN: Your VIN to fix
             
             // Replace YourAccessCode with the access code assigned.
             // Replace YourVINToFix with the incorrect VIN.
